@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class PersonService {
 
-    public static final String TOPIC_PERSON = "meu-topico";
+    public static final String TOPIC_PERSON = "topic-person";
     private final KafkaTemplate<String, PersonDTO> kafkaTemplate;
 
     public void sendMessage() {
@@ -24,7 +24,7 @@ public class PersonService {
         log.info("[Sending message] for kafka");
         log.info("[Message] {}", person);
         kafkaTemplate.send(TOPIC_PERSON, person);
-        log.info("[Sent]");
+        log.info("[Message Sent]");
     }
 
 }
