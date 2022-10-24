@@ -17,3 +17,6 @@ mvn spring-boot:run
 ```
 curl -X POST localhost:8080/person
 ```
+
+## Escutando as mensagens produzidas pelo terminal
+./bin/kafka-console-consumer.sh --topic topic-person --from-beginning --bootstrap-server localhost:9092
